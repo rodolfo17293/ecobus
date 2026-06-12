@@ -126,11 +126,11 @@ export function Hero() {
             alt=""
             aria-hidden="true"
             decoding="async"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain object-bottom md:object-cover md:object-center"
           />
         ) : (
           <video
-            className="w-full h-full object-cover"
+            className="w-full h-full object-contain object-bottom md:object-cover md:object-center"
             autoPlay
             loop
             muted
@@ -156,7 +156,7 @@ export function Hero() {
       <div className="relative z-20 max-w-7xl mx-auto text-center px-4 sm:px-6 pt-6 sm:pt-12">
         {/* Badge */}
         <div
-          className="inline-flex items-center gap-2 mb-5 sm:mb-8 animate-fade-in-up"
+          className="hidden md:inline-flex items-center gap-2 mb-5 sm:mb-8 animate-fade-in-up"
           style={{ animationDelay: "0.2s", opacity: 0 }}
         >
           <span className="w-6 h-6 border border-[#8A9BA8]/50 rounded flex items-center justify-center">
