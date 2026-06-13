@@ -26,6 +26,7 @@ export function Navbar() {
 
   const navLinks = [
     { label: "Servicios", chevron: true, href: "#servicios" },
+    { label: "Flota", href: "#flota" },
     { label: "Nosotros", href: "#nosotros" },
     { label: "Norma vigente", href: "#norma" },
     { label: "Contacto", href: "#contacto" },

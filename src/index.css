@@ -52,3 +52,35 @@ body { font-family: 'Inter', sans-serif; background: #EFEFED; -webkit-font-smoot
   .reveal { opacity: 1; transform: none; transition: none; }
   .parallax-img { animation: none; transform: none; }
 }
+
+/* ---- Fleet passenger slider ---- */
+.fleet-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 9999px;
+  background: #E4E6E8;
+  outline: none;
+  cursor: pointer;
+}
+.fleet-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 9999px;
+  background: #1C2331;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 1px 4px rgba(28, 35, 49, 0.35);
+  transition: transform 0.15s ease-out;
+}
+.fleet-range::-webkit-slider-thumb:hover { transform: scale(1.1); }
+.fleet-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 9999px;
+  background: #1C2331;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 1px 4px rgba(28, 35, 49, 0.35);
+}
+.fleet-range:focus-visible { box-shadow: 0 0 0 3px rgba(138, 155, 168, 0.4); }
