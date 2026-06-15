@@ -109,19 +109,21 @@ export function Hero() {
   // Pick the video source + decide autoplay once on mount.
   const [videoSrc, setVideoSrc] = useState(null);
   const [reduceMotion, setReduceMotion] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const mobile = window.matchMedia("(max-width: 1024px)").matches;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     setReduceMotion(reduce);
+    setIsMobile(mobile);
     setVideoSrc(mobile ? HERO_VIDEO_720 : HERO_VIDEO_4K);
   }, []);
 
   return (
     <section id="top" className="relative h-screen bg-[#EFEFED] overflow-hidden">
-      {/* Background video (or static poster when reduced-motion) */}
+      {/* Background video (or static poster on mobile / reduced-motion) */}
       <div className="absolute inset-0 z-0 pt-[120px] md:pt-[200px]">
-        {reduceMotion ? (
+        {reduceMotion || isMobile ? (
           <img
             src={HERO_POSTER}
             alt=""
@@ -154,7 +156,7 @@ export function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-20 max-w-7xl mx-auto text-center px-4 sm:px-6 pt-6 sm:pt-12">
+      <div className="relative z-20 max-w-7xl mx-auto text-center px-4 sm:px-6 pt-20 sm:pt-12">
         {/* Badge */}
         <div
           className="hidden md:inline-flex items-center gap-2 mb-5 sm:mb-8 animate-fade-in-up"
