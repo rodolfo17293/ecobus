@@ -209,6 +209,23 @@ export function Footer() {
         </div>
       </div>
 
+      {/* Mapa */}
+      <div className="max-w-7xl mx-auto px-4 mt-12">
+        <div className="rounded-2xl overflow-hidden border border-white/10">
+          <iframe
+            title="Ubicación de ECOBUS en Google Maps"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3220.1793256654555!2d-70.88717700763188!3d-33.59877690019549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662e6b93fa13867%3A0xfbcd28937dddaefd!2sBuses%20Ecobus!5e0!3m2!1ses!2scl!4v1783361070106!5m2!1ses!2scl"
+            width="100%"
+            height="320"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="strict-origin-when-cross-origin"
+            className="block w-full grayscale-[0.2]"
+          />
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 border-t border-white/10 mt-12 pt-6 text-sm text-white/50 flex flex-wrap justify-between gap-2">
         <span>© 2026 ECOBUS. Todos los derechos reservados.</span>
         <span>Política de privacidad · Términos</span>
