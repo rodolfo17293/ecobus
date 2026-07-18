@@ -149,7 +149,11 @@ export function FinalCTA() {
           </a>
         </div>
         <p className="text-white/70 text-sm mt-6">
-          22 812 00 60 · 22 812 03 00 · ventas@ecobus.cl
+          <a href="tel:+56228120060" className="hover:text-white transition-colors">22 812 00 60</a>
+          {" · "}
+          <a href="tel:+56228120300" className="hover:text-white transition-colors">22 812 03 00</a>
+          {" · "}
+          <a href="mailto:ventas@ecobus.cl" className="hover:text-white transition-colors">ventas@ecobus.cl</a>
         </p>
       </Reveal>
     </section>
@@ -161,11 +165,22 @@ export function Footer() {
   const cols = [
     {
       title: "Servicios",
-      links: ["Traslado de personal", "Salidas pedagógicas", "Eventos en la ciudad", "Salidas turísticas", "Viajes privados"],
+      links: [
+        { label: "Traslado de personal", href: "#servicios" },
+        { label: "Salidas pedagógicas", href: "#servicios" },
+        { label: "Eventos en la ciudad", href: "#servicios" },
+        { label: "Salidas turísticas", href: "#servicios" },
+        { label: "Viajes privados", href: "#servicios" },
+      ],
     },
     {
       title: "Empresa",
-      links: ["Somos ECOBUS", "Flota", "Norma vigente", "Cotizar"],
+      links: [
+        { label: "Somos ECOBUS", href: "#nosotros" },
+        { label: "Flota", href: "#flota" },
+        { label: "Norma vigente", href: "#norma" },
+        { label: "Cotizar", href: "#cotizar" },
+      ],
     },
   ];
   return (
@@ -190,8 +205,8 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-4">{c.title}</h4>
             <ul className="space-y-1 text-sm text-white/70">
               {c.links.map((l) => (
-                <li key={l}>
-                  <a href="#" className="inline-block py-1.5 hover:text-white transition-colors">{l}</a>
+                <li key={l.label}>
+                  <a href={l.href} className="inline-block py-1.5 hover:text-white transition-colors">{l.label}</a>
                 </li>
               ))}
             </ul>
@@ -202,8 +217,8 @@ export function Footer() {
         <div>
           <h4 className="text-white font-semibold mb-4">Contacto</h4>
           <ul className="space-y-1 text-sm text-white/70">
-            <li className="py-1.5">Tel: 22 812 00 60</li>
-            <li className="py-1.5">Tel: 22 812 03 00</li>
+            <li><a href="tel:+56228120060" className="inline-block py-1.5 hover:text-white transition-colors">Tel: 22 812 00 60</a></li>
+            <li><a href="tel:+56228120300" className="inline-block py-1.5 hover:text-white transition-colors">Tel: 22 812 03 00</a></li>
             <li><a href="mailto:info@ecobus.cl" className="inline-block py-1.5 hover:text-white transition-colors">info@ecobus.cl</a></li>
             <li><a href="mailto:ventas@ecobus.cl" className="inline-block py-1.5 hover:text-white transition-colors">ventas@ecobus.cl</a></li>
           </ul>
