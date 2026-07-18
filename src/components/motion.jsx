@@ -106,20 +106,21 @@ export function useCountUp(end, start, duration = 1200) {
   return value;
 }
 
-/* Picture — responsive image. Serves the lightweight WebP to viewports
-   ≤1024px and the full-res PNG to large screens. `name` is the filename
-   without extension; both `{name}.png` and `{name}_min.webp` exist at the CDN.
-   By default fills its (sized) wrapper; the wrapper provides the aspect ratio
-   so nothing shifts during load. Pass eager for above-the-fold images. */
+/* Picture — responsive image. Serves a lightweight WebP to viewports ≤1024px
+   and the full-res WebP to large screens. `name` is the filename without
+   extension; both `img/{name}.webp` and `img/{name}_min.webp` are self-hosted
+   under public/img. By default fills its (sized) wrapper; the wrapper provides
+   the aspect ratio so nothing shifts during load. Pass eager for above-the-fold. */
 export const ASSET_BASE = "https://d8j0ntlcm91z4.cloudfront.net/user_3EsEl3qJ3ZKxReLoGNp3Ln0RKSf/";
+export const IMG_BASE = "img/";
 
 export function Picture({ name, alt = "", className = "", width, height, eager = false, fill = true, pictureClassName = "" }) {
   const pCls = (fill ? "block w-full h-full " : "") + pictureClassName;
   return (
     <picture className={pCls.trim() || undefined}>
-      <source media="(max-width: 1024px)" srcSet={ASSET_BASE + name + "_min.webp"} type="image/webp" />
+      <source media="(max-width: 1024px)" srcSet={IMG_BASE + name + "_min.webp"} type="image/webp" />
       <img
-        src={ASSET_BASE + name + ".png"}
+        src={IMG_BASE + name + ".webp"}
         alt={alt}
         loading={eager ? "eager" : "lazy"}
         decoding="async"

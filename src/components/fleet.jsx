@@ -6,8 +6,6 @@ import { Reveal } from "./motion.jsx";
    vehicle takes the stage; the CTA pre-fills a WhatsApp quote with the
    recommended vehicle and group size. */
 
-const FLEET_CDN = "https://d2ol7oe51mr4n9.cloudfront.net/user_3EsEl3qJ3ZKxReLoGNp3Ln0RKSf/";
-
 const FLEET = [
   {
     id: "van",
@@ -15,7 +13,7 @@ const FLEET = [
     capacity: "9 a 15 pasajeros",
     maxPax: 15,
     article: "una",
-    img: FLEET_CDN + "21eb24b2-97f0-4cb8-946e-db690a60cc42.png",
+    img: "img/van.webp",
     specs: [
       { Icon: Snowflake, label: "Aire acondicionado" },
       { Icon: UserCheck, label: "Conductor profesional" },
@@ -28,7 +26,7 @@ const FLEET = [
     capacity: "32 a 33 pasajeros",
     maxPax: 33,
     article: "un",
-    img: FLEET_CDN + "eca25b9c-8c28-46eb-9ee6-3ecaa36bb2e2.png",
+    img: "img/taxibus.webp",
     specs: [
       { Icon: Snowflake, label: "Aire acondicionado" },
       { Icon: Tv, label: "TV a bordo" },
@@ -42,7 +40,7 @@ const FLEET = [
     capacity: "43 a 45 pasajeros",
     maxPax: 45,
     article: "un",
-    img: FLEET_CDN + "b85958ab-378d-4817-b5f0-db944f5c25b3.png",
+    img: "img/full.webp",
     specs: [
       { Icon: Snowflake, label: "Aire acondicionado" },
       { Icon: Bath, label: "Baño a bordo" },

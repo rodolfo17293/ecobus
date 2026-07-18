@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, ShieldCheck } from "lucide-react";
-import { Reveal, useReveal, useCountUp, Picture, ASSET_BASE } from "./motion.jsx";
+import { Reveal, useReveal, useCountUp, Picture, ASSET_BASE, IMG_BASE } from "./motion.jsx";
 
 const LOGO = "assets/ecobus-logo.png";
 
@@ -158,7 +158,7 @@ export function Navbar() {
 /* ----------------------------------- HERO ---------------------------------- */
 const HERO_VIDEO_4K = ASSET_BASE + "hf_20260611_014439_66bdea1a-6fae-4b4f-8e8c-dc5b13663852.mp4";
 const HERO_VIDEO_720 = ASSET_BASE + "hf_20260611_013708_6cf30703-feb0-4d5b-a605-5828a52e6450.mp4";
-const HERO_POSTER = ASSET_BASE + "hf_20260611_012037_e5a1be19-7e2f-4dfc-838a-5b7664142817_min.webp";
+const HERO_POSTER = IMG_BASE + "hf_20260611_012037_e5a1be19-7e2f-4dfc-838a-5b7664142817_min.webp";
 
 export function Hero() {
   // Pick the video source + decide autoplay once on mount.
