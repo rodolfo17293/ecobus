@@ -1,4 +1,4 @@
-import { ShieldCheck, Star, Instagram, Facebook, Linkedin } from "lucide-react";
+import { ShieldCheck, Star, Instagram, Facebook } from "lucide-react";
 import { Reveal, Picture } from "./motion.jsx";
 import { WA_QUOTE } from "./sections1.jsx";
 
@@ -223,9 +223,8 @@ export function Footer() {
             <li><a href="mailto:ventas@ecobus.cl" className="inline-block py-1.5 hover:text-white transition-colors">ventas@ecobus.cl</a></li>
           </ul>
           <div className="flex gap-2 mt-3 -ml-2.5">
-            <a href="#" aria-label="Instagram" className="w-11 h-11 flex items-center justify-center text-white/70 hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
-            <a href="#" aria-label="Facebook" className="w-11 h-11 flex items-center justify-center text-white/70 hover:text-white transition-colors"><Facebook className="w-5 h-5" /></a>
-            <a href="#" aria-label="LinkedIn" className="w-11 h-11 flex items-center justify-center text-white/70 hover:text-white transition-colors"><Linkedin className="w-5 h-5" /></a>
+            <a href="https://www.instagram.com/ecobus.cl/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de ECOBUS" className="w-11 h-11 flex items-center justify-center text-white/70 hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
+            <a href="https://www.facebook.com/buses.ecobus.2025" target="_blank" rel="noopener noreferrer" aria-label="Facebook de ECOBUS" className="w-11 h-11 flex items-center justify-center text-white/70 hover:text-white transition-colors"><Facebook className="w-5 h-5" /></a>
           </div>
         </div>
       </div>
