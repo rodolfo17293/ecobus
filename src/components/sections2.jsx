@@ -16,7 +16,7 @@ export function SomosEcobus() {
           />
         </Reveal>
         <div>
-          <Reveal as="p" delay={0} className="text-sm uppercase tracking-widest text-[#8A9BA8] mb-3">Somos ECOBUS</Reveal>
+          <Reveal as="p" delay={0} className="text-sm uppercase tracking-widest text-[#5C6E7D] mb-3">Somos ECOBUS</Reveal>
           <Reveal as="h2" delay={120} className="text-3xl sm:text-4xl font-normal tracking-tight text-[#1C2331] mb-6">
             Seis décadas en movimiento
           </Reveal>
@@ -90,7 +90,7 @@ export function Services() {
                 />
               </div>
               <div className="p-6">
-                <c.Icon className="w-5 h-5 text-[#8A9BA8] mb-3" />
+                <c.Icon className="w-5 h-5 text-[#5C6E7D] mb-3" />
                 <h3 className="text-xl font-semibold text-[#1C2331] mb-2">{c.title}</h3>
                 <p className="text-[#1C2331]/60 text-sm mb-4">{c.copy}</p>
                 <a href="#cotizar" className="inline-flex items-center gap-1 text-sm font-medium text-[#1C2331] hover:gap-2 transition-all">
@@ -149,12 +149,12 @@ export function TodosServicios() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {families.map((f, i) => (
             <Reveal key={f.title} delay={Math.min(500, i * 100)}>
-              <f.Icon className="w-6 h-6 text-[#8A9BA8] mb-3" />
+              <f.Icon className="w-6 h-6 text-[#5C6E7D] mb-3" />
               <h3 className="text-lg font-semibold text-[#1C2331] mb-3">{f.title}</h3>
               <ul className="space-y-2 text-[#1C2331]/60 text-sm">
                 {f.items.map((it) => (
                   <li key={it} className="flex gap-2">
-                    <span className="text-[#8A9BA8] select-none">·</span>
+                    <span className="text-[#5C6E7D] select-none">·</span>
                     <span>{it}</span>
                   </li>
                 ))}

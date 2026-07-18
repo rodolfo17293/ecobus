@@ -1,5 +1,6 @@
 import { ShieldCheck, Star, Instagram, Facebook, Linkedin } from "lucide-react";
 import { Reveal, Picture } from "./motion.jsx";
+import { WA_QUOTE } from "./sections1.jsx";
 
 const LOGO = "assets/ecobus-logo.png";
 
@@ -56,14 +57,14 @@ export function NormaVigente() {
   return (
     <section id="norma" className="bg-white py-12 border-y border-[#1C2331]/10">
       <div className="max-w-7xl mx-auto px-4 text-center">
-        <Reveal as="p" delay={0} className="text-sm uppercase tracking-widest text-[#8A9BA8] mb-3">Norma vigente</Reveal>
+        <Reveal as="p" delay={0} className="text-sm uppercase tracking-widest text-[#5C6E7D] mb-3">Norma vigente</Reveal>
         <Reveal as="h2" delay={120} className="text-2xl sm:text-3xl font-normal text-[#1C2331]">
           Cada viaje, respaldado por la normativa
         </Reveal>
         <Reveal delay={240} className="flex flex-wrap justify-center gap-6 mt-6">
           {pills.map((p) => (
             <span key={p} className="inline-flex items-center gap-2 border border-[#1C2331]/15 rounded-full px-4 py-2 text-sm text-[#1C2331]/70">
-              <ShieldCheck className="w-4 h-4 text-[#8A9BA8]" />
+              <ShieldCheck className="w-4 h-4 text-[#5C6E7D]" />
               {p}
             </span>
           ))}
@@ -107,7 +108,7 @@ export function Testimonials() {
                 ))}
               </div>
               <p className="text-[#1C2331] flex-1">{q.quote}</p>
-              <p className="text-sm text-[#8A9BA8] mt-4">{q.who}</p>
+              <p className="text-sm text-[#5C6E7D] mt-4">{q.who}</p>
             </Reveal>
           ))}
         </div>
@@ -138,7 +139,12 @@ export function FinalCTA() {
           Cuéntenos su ruta y reciba hoy mismo una cotización a su medida.
         </p>
         <div className="mt-8">
-          <a href="#contacto" className="inline-block bg-white text-[#1C2331] px-8 py-3 rounded-full font-medium hover:bg-[#E8DFC8] transition-colors">
+          <a
+            href={WA_QUOTE}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-white text-[#1C2331] px-8 py-3 rounded-full font-medium hover:bg-[#E8DFC8] transition-colors"
+          >
             Pida su cotización
           </a>
         </div>

@@ -1,13 +1,20 @@
-import { useState, useEffect } from "react";
-import { ChevronDown, Menu, X, ShieldCheck } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Menu, X, ShieldCheck } from "lucide-react";
 import { Reveal, useReveal, useCountUp, Picture, ASSET_BASE } from "./motion.jsx";
 
 const LOGO = "assets/ecobus-logo.png";
+
+/* Shared WhatsApp quote deep link — the primary conversion path. */
+export const WA_QUOTE =
+  "https://wa.me/56999688045?text=" +
+  encodeURIComponent("Hola ECOBUS, quiero pedir una cotización.");
 
 /* ---------------------------------- NAVBAR --------------------------------- */
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const menuBtnRef = useRef(null);
+  const menuRef = useRef(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -24,8 +31,42 @@ export function Navbar() {
     return () => { document.body.style.overflow = prev || ""; };
   }, [open]);
 
+  // Mobile menu a11y: focus the first link on open, close on Escape, trap Tab
+  // inside the panel, and return focus to the trigger on close.
+  useEffect(() => {
+    if (!open) return;
+    const panel = menuRef.current;
+    const focusables = panel ? panel.querySelectorAll("a, button") : [];
+    focusables[0]?.focus();
+
+    const onKey = (e) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        return;
+      }
+      if (e.key === "Tab" && focusables.length) {
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  const closeMenu = () => {
+    setOpen(false);
+    menuBtnRef.current?.focus();
+  };
+
   const navLinks = [
-    { label: "Servicios", chevron: true, href: "#servicios" },
+    { label: "Servicios", href: "#servicios" },
     { label: "Flota", href: "#flota" },
     { label: "Nosotros", href: "#nosotros" },
     { label: "Norma vigente", href: "#norma" },
@@ -53,24 +94,29 @@ export function Navbar() {
           {navLinks.map((l) => (
             <a key={l.label} href={l.href} className="flex items-center gap-1 px-2 py-2.5 hover:text-[#1C2331] transition-colors">
               {l.label}
-              {l.chevron && <ChevronDown className="w-3.5 h-3.5" />}
             </a>
           ))}
         </nav>
 
         {/* Right: actions */}
         <div className="hidden sm:flex items-center gap-2">
-          <a href="#contacto" className="text-sm text-[#1C2331]/70 hover:text-[#1C2331] transition-colors px-3 py-2.5">Ingresar</a>
-          <a href="#cotizar" className="bg-[#1C2331] text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#2A3447] transition-colors">
+          <a
+            href={WA_QUOTE}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#1C2331] text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#2A3447] transition-colors"
+          >
             Pida su cotización
           </a>
         </div>
 
         {/* Mobile hamburger */}
         <button
+          ref={menuBtnRef}
           className="sm:hidden text-[#1C2331] p-2.5 -mr-1"
-          aria-label="Menú"
+          aria-label={open ? "Cerrar menú" : "Menú"}
           aria-expanded={open}
+          aria-controls="mobile-menu"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -79,16 +125,25 @@ export function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="sm:hidden absolute top-[60px] inset-x-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200 animate-fade-in-overlay">
+        <div
+          id="mobile-menu"
+          ref={menuRef}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menú de navegación"
+          className="sm:hidden absolute top-[60px] inset-x-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200 animate-fade-in-overlay"
+        >
           <div className="flex flex-col px-6 py-2 text-[#1C2331]">
             {navLinks.map((l) => (
-              <a key={l.label} href={l.href} onClick={() => setOpen(false)} className="py-3 text-base hover:text-[#1C2331]/60 transition-colors">
+              <a key={l.label} href={l.href} onClick={closeMenu} className="py-3 text-base hover:text-[#1C2331]/60 transition-colors">
                 {l.label}
               </a>
             ))}
             <a
-              href="#cotizar"
-              onClick={() => setOpen(false)}
+              href={WA_QUOTE}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={closeMenu}
               className="mt-2 border-t border-gray-200 pt-4 w-full text-center bg-[#1C2331] text-white px-5 py-3 rounded-full text-sm font-medium hover:bg-[#2A3447] transition-colors"
             >
               Pida su cotización
@@ -129,6 +184,8 @@ export function Hero() {
             alt=""
             aria-hidden="true"
             decoding="async"
+            loading="eager"
+            fetchPriority="high"
             className="w-full h-full object-contain object-bottom md:object-cover md:object-center"
           />
         ) : (
@@ -138,7 +195,7 @@ export function Hero() {
             loop
             muted
             playsInline
-            preload="auto"
+            preload="metadata"
             poster={HERO_POSTER}
             src={videoSrc || undefined}
           />
@@ -199,7 +256,12 @@ export function Hero() {
           className="flex flex-wrap items-center justify-center gap-4 animate-fade-in-up"
           style={{ animationDelay: "0.5s", opacity: 0 }}
         >
-          <a href="#cotizar" className="bg-[#1C2331] text-white px-6 sm:px-8 py-3 rounded-full font-medium hover:bg-[#2A3447] transition-colors">
+          <a
+            href={WA_QUOTE}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#1C2331] text-white px-6 sm:px-8 py-3 rounded-full font-medium hover:bg-[#2A3447] transition-colors"
+          >
             Pida su cotización
           </a>
           <a href="#servicios" className="text-[#1C2331] underline-offset-4 hover:underline py-3 px-2">
@@ -236,7 +298,7 @@ export function TrustBar() {
           {stats.map((s) => (
             <div key={s.label} className="text-center">
               <div className="text-2xl sm:text-3xl font-semibold text-[#1C2331] tabular-nums">{s.big}</div>
-              <div className="text-sm text-[#8A9BA8]">{s.label}</div>
+              <div className="text-sm text-[#5C6E7D]">{s.label}</div>
             </div>
           ))}
         </div>
@@ -251,7 +313,7 @@ export function Gallery() {
     <section className="bg-[#E4E6E8] py-20 sm:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="max-w-2xl mx-auto text-center mb-10">
-          <Reveal as="p" delay={0} className="text-sm uppercase tracking-widest text-[#8A9BA8] mb-3">La flota</Reveal>
+          <Reveal as="p" delay={0} className="text-sm uppercase tracking-widest text-[#5C6E7D] mb-3">La flota</Reveal>
           <Reveal as="h2" delay={120} className="text-3xl sm:text-5xl font-normal tracking-tight text-[#1C2331] mb-4">
             El viaje empieza antes de subir
           </Reveal>

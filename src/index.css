@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Inter is loaded via <link> in index.html to avoid render-blocking @import. */
 html { scroll-behavior: smooth; }
+
+/* Anchored sections clear the fixed header (~72px) when jumped to. */
+section[id] { scroll-margin-top: 84px; }
 body { font-family: 'Inter', sans-serif; background: #EFEFED; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
 @keyframes fadeInUp {

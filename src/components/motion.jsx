@@ -48,7 +48,7 @@ export function useReveal(options) {
 
     // Fallback path — covers above-the-fold content and IO-less environments.
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
+    window.addEventListener("resize", onScroll, { passive: true });
     if (inView()) reveal();
 
     return cleanup;
