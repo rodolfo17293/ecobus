@@ -192,7 +192,7 @@ export function Footer() {
             <img src={LOGO} alt="ECOBUS" width={179} height={77} className="h-9 w-auto" />
           </div>
           <p className="text-sm text-white/70 mb-4">
-            Transporte privado de personas. Más de 60 años moviendo a empresas, estudiantes y familias.
+            Transporte privado de personas. Más de 30 años moviendo a empresas, estudiantes y familias.
           </p>
           <p className="text-xs text-white/50">
             Operamos bajo norma vigente, con seguro de asiento por pasajero.

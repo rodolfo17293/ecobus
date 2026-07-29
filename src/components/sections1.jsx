@@ -223,7 +223,7 @@ export function Hero() {
             <ShieldCheck className="w-4 h-4 text-[#1C2331]" />
           </span>
           <span className="text-xs sm:text-sm font-medium text-[#1C2331]">
-            Más de 60 años. Más de 4.000 personas al día.
+            Más de 30 años. Más de 4.000 personas al día.
           </span>
         </div>
 
@@ -276,7 +276,7 @@ export function Hero() {
 /* --------------------------------- TRUST BAR -------------------------------- */
 export function TrustBar() {
   const [ref, visible] = useReveal();
-  const years = useCountUp(60, visible);
+  const years = useCountUp(30, visible);
   const pax = useCountUp(4000, visible);
 
   const fmtYears = "+" + Math.round(years) + " años";
@@ -292,7 +292,7 @@ export function TrustBar() {
     <section className="bg-white py-10 border-y border-[#1C2331]/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
         <Reveal as="p" className="inline-block text-sm sm:text-base text-[#1C2331]/70 border border-[#1C2331]/15 rounded-full px-5 py-2">
-          La ruta de confianza de empresas, colegios y familias desde hace seis décadas
+          La ruta de confianza de empresas, colegios y familias desde hace tres décadas
         </Reveal>
         <div ref={ref} className="flex flex-wrap justify-center gap-8 sm:gap-16 mt-6">
           {stats.map((s) => (

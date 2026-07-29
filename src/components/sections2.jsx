@@ -18,13 +18,13 @@ export function SomosEcobus() {
         <div>
           <Reveal as="p" delay={0} className="text-sm uppercase tracking-widest text-[#5C6E7D] mb-3">Somos ECOBUS</Reveal>
           <Reveal as="h2" delay={120} className="text-3xl sm:text-4xl font-normal tracking-tight text-[#1C2331] mb-6">
-            Seis décadas en movimiento
+            Tres décadas en movimiento
           </Reveal>
           <Reveal delay={240} className="space-y-4 text-[#1C2331]/60 leading-relaxed">
             <p>
               Acompañamos a nuestros clientes antes, durante y después de cada servicio. Seguridad,
               puntualidad, confiabilidad, confort y manejo de contingencias no son promesas: son el
-              estándar con el que operamos hace más de 60 años.
+              estándar con el que operamos hace más de 30 años.
             </p>
             <p>
               Cada día trasladamos a más de 4.000 trabajadores, las 24 horas, de manera cordial,
