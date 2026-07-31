@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, ShieldCheck } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Reveal, useReveal, useCountUp, Picture, ASSET_BASE, IMG_BASE } from "./motion.jsx";
 
 const LOGO = "assets/ecobus-logo.png";
@@ -214,19 +214,6 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-20 max-w-7xl mx-auto text-center px-4 sm:px-6 pt-20 sm:pt-12">
-        {/* Badge */}
-        <div
-          className="hidden md:inline-flex items-center gap-2 mb-5 sm:mb-8 animate-fade-in-up"
-          style={{ animationDelay: "0.2s", opacity: 0 }}
-        >
-          <span className="w-6 h-6 border border-[#8A9BA8]/50 rounded flex items-center justify-center">
-            <ShieldCheck className="w-4 h-4 text-[#1C2331]" />
-          </span>
-          <span className="text-xs sm:text-sm font-medium text-[#1C2331]">
-            Más de 30 años. Más de 4.000 personas al día.
-          </span>
-        </div>
-
         {/* Heading */}
         <h1
           className="text-[38px] sm:text-6xl md:text-7xl lg:text-[80px] font-normal leading-[1.1] tracking-tight text-[#1C2331] mb-4 sm:mb-5 animate-fade-in-up"
