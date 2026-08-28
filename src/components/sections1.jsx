@@ -284,7 +284,7 @@ export function TrustBar() {
         <div ref={ref} className="flex flex-wrap justify-center gap-8 sm:gap-16 mt-6">
           {stats.map((s) => (
             <div key={s.label} className="text-center">
-              <div className="text-2xl sm:text-3xl font-semibold text-[#1C2331] tabular-nums">{s.big}</div>
+              <div className="text-2xl sm:text-3xl font-semibold text-[#437521] tabular-nums">{s.big}</div>
               <div className="text-sm text-[#5C6E7D]">{s.label}</div>
             </div>
           ))}
@@ -297,10 +297,10 @@ export function TrustBar() {
 /* ---------------------------------- GALLERY -------------------------------- */
 export function Gallery() {
   return (
-    <section className="bg-[#E4E6E8] py-20 sm:py-28">
+    <section className="bg-[#EFEFED] py-20 sm:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="max-w-2xl mx-auto text-center mb-10">
-          <Reveal as="p" delay={0} className="text-sm uppercase tracking-widest text-[#5C6E7D] mb-3">La flota</Reveal>
+          <Reveal as="p" delay={0} className="text-sm uppercase tracking-widest text-[#437521] mb-3">La flota</Reveal>
           <Reveal as="h2" delay={120} className="text-3xl sm:text-5xl font-normal tracking-tight text-[#1C2331] mb-4">
             El viaje empieza antes de subir
           </Reveal>

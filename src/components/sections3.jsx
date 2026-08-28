@@ -57,14 +57,14 @@ export function NormaVigente() {
   return (
     <section id="norma" className="bg-white py-12 border-y border-[#1C2331]/10">
       <div className="max-w-7xl mx-auto px-4 text-center">
-        <Reveal as="p" delay={0} className="text-sm uppercase tracking-widest text-[#5C6E7D] mb-3">Norma vigente</Reveal>
+        <Reveal as="p" delay={0} className="text-sm uppercase tracking-widest text-[#437521] mb-3">Norma vigente</Reveal>
         <Reveal as="h2" delay={120} className="text-2xl sm:text-3xl font-normal text-[#1C2331]">
           Cada viaje, respaldado por la normativa
         </Reveal>
         <Reveal delay={240} className="flex flex-wrap justify-center gap-6 mt-6">
           {pills.map((p) => (
             <span key={p} className="inline-flex items-center gap-2 border border-[#1C2331]/15 rounded-full px-4 py-2 text-sm text-[#1C2331]/70">
-              <ShieldCheck className="w-4 h-4 text-[#5C6E7D]" />
+              <ShieldCheck className="w-4 h-4 text-[#437521]" />
               {p}
             </span>
           ))}
@@ -91,7 +91,7 @@ export function Testimonials() {
     },
   ];
   return (
-    <section className="bg-[#E4E6E8] py-20 sm:py-28">
+    <section className="bg-[#EFEFED] py-20 sm:py-28">
       <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <Reveal as="h2" className="text-3xl sm:text-4xl font-normal tracking-tight text-[#1C2331]">
