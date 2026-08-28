@@ -27,8 +27,8 @@ export function SomosEcobus() {
               estándar con el que operamos hace más de 30 años.
             </p>
             <p>
-              Cada día trasladamos a más de 4.000 trabajadores, las 24 horas, de manera cordial,
-              oportuna y segura, con las mejores condiciones comerciales del mercado.
+              Trasladamos personal las 24 horas, de manera cordial, oportuna y segura, con las
+              mejores condiciones comerciales del mercado.
             </p>
             <p>
               También somos el transporte de confianza de establecimientos educacionales: actividades
