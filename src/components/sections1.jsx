@@ -175,9 +175,11 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="top" className="relative h-screen bg-[#EFEFED] overflow-hidden">
-      {/* Background video (or static poster on mobile / reduced-motion) */}
-      <div className="absolute inset-0 z-0 pt-[120px] md:pt-[200px]">
+    <section id="top" className="relative flex flex-col md:block md:h-screen bg-[#EFEFED] overflow-hidden">
+      {/* Media. On phones it sits in flow right under the copy, so the section is
+          only as tall as it needs to be; from md up it goes back to being a
+          full-bleed background behind the text. */}
+      <div className="order-2 w-full md:order-none md:absolute md:inset-0 md:z-0 md:pt-[200px]">
         {reduceMotion || isMobile ? (
           <img
             src={HERO_POSTER}
@@ -186,11 +188,11 @@ export function Hero() {
             decoding="async"
             loading="eager"
             fetchPriority="high"
-            className="w-full h-full object-contain object-bottom md:object-cover md:object-center"
+            className="w-full h-auto md:h-full object-contain object-bottom md:object-cover md:object-center"
           />
         ) : (
           <video
-            className="w-full h-full object-contain object-bottom md:object-cover md:object-center"
+            className="w-full h-auto md:h-full object-contain object-bottom md:object-cover md:object-center"
             autoPlay
             loop
             muted
@@ -202,9 +204,10 @@ export function Hero() {
         )}
       </div>
 
-      {/* Fade overlays */}
+      {/* Fade overlays — desktop only; on phones the media is no longer behind
+          the copy, so there is nothing to fade out. */}
       <div
-        className="absolute inset-x-0 z-10 pointer-events-none"
+        className="hidden md:block absolute inset-x-0 z-10 pointer-events-none"
         style={{ top: "120px", height: "200px", background: "linear-gradient(to bottom, #EFEFED, rgba(239,239,237,0))" }}
       />
       <div
@@ -213,7 +216,7 @@ export function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-20 max-w-7xl mx-auto text-center px-4 sm:px-6 pt-20 sm:pt-28 lg:pt-32">
+      <div className="order-1 md:order-none relative z-20 max-w-7xl mx-auto text-center px-4 sm:px-6 pt-20 sm:pt-28 lg:pt-32 pb-12 md:pb-0">
         {/* Heading */}
         <h1
           className="text-[38px] sm:text-6xl md:text-7xl lg:text-[80px] font-normal leading-[1.1] tracking-tight text-[#1C2331] mb-4 sm:mb-5 animate-fade-in-up"
