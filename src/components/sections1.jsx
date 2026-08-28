@@ -267,14 +267,11 @@ export function Hero() {
 export function TrustBar() {
   const [ref, visible] = useReveal();
   const years = useCountUp(30, visible);
-  const pax = useCountUp(4000, visible);
 
   const fmtYears = "+" + Math.round(years) + " años";
-  const fmtPax = "+" + Math.round(pax).toLocaleString("es-CL");
 
   const stats = [
     { big: fmtYears, label: "de trayectoria" },
-    { big: fmtPax, label: "pasajeros diarios" },
     { big: "24/7", label: "operación continua" },
     { big: "100%", label: "flota acondicionada" },
   ];
