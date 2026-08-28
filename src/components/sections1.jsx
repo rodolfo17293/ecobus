@@ -213,7 +213,7 @@ export function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-20 max-w-7xl mx-auto text-center px-4 sm:px-6 pt-20 sm:pt-12">
+      <div className="relative z-20 max-w-7xl mx-auto text-center px-4 sm:px-6 pt-20 sm:pt-28 lg:pt-32">
         {/* Heading */}
         <h1
           className="text-[38px] sm:text-6xl md:text-7xl lg:text-[80px] font-normal leading-[1.1] tracking-tight text-[#1C2331] mb-4 sm:mb-5 animate-fade-in-up"
