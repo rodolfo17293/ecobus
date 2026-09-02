@@ -60,7 +60,7 @@ export function FleetSelector() {
   const vehicle = recommendFor(pax);
 
   const waText = encodeURIComponent(
-    `Hola ECOBUS, quiero cotizar ${vehicle.article} ${vehicle.name} para ${pax} pasajeros.`
+    `Hola DECOBUS, quiero cotizar ${vehicle.article} ${vehicle.name} para ${pax} pasajeros.`
   );
   const waHref = `https://wa.me/56999688045?text=${waText}`;
 

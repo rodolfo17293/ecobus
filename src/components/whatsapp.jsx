@@ -25,7 +25,7 @@ export function WhatsAppButton() {
 
   return (
     <a
-      href="https://wa.me/56999688045?text=Hola%20ECOBUS%2C%20quiero%20cotizar%20un%20viaje."
+      href="https://wa.me/56999688045?text=Hola%20DECOBUS%2C%20quiero%20cotizar%20un%20viaje."
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Escríbenos por WhatsApp"
