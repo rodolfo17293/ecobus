@@ -16,7 +16,7 @@ export function SomosEcobus() {
           />
         </Reveal>
         <div>
-          <Reveal as="p" delay={0} className="text-sm uppercase tracking-widest text-[#437521] mb-3">Somos DECOBUS</Reveal>
+          <Reveal as="p" delay={0} className="text-sm uppercase tracking-widest text-[#437521] mb-3">Somos ECOBUS</Reveal>
           <Reveal as="h2" delay={120} className="text-3xl sm:text-4xl font-normal tracking-tight text-[#1C2331] mb-6">
             Tres décadas en movimiento
           </Reveal>
@@ -139,7 +139,7 @@ export function TodosServicios() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <Reveal as="h2" delay={0} className="text-3xl sm:text-4xl font-normal tracking-tight text-white mb-4">
-            Donde haya un grupo, hay un DECOBUS
+            Donde haya un grupo, hay un ECOBUS
           </Reveal>
           <Reveal as="p" delay={120} className="text-white/70 max-w-2xl mx-auto">
             Todos nuestros servicios, con el máximo de comodidad, rapidez, confiabilidad, puntualidad y seguridad.

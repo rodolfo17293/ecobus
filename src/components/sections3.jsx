@@ -176,7 +176,7 @@ export function Footer() {
     {
       title: "Empresa",
       links: [
-        { label: "Somos DECOBUS", href: "#nosotros" },
+        { label: "Somos ECOBUS", href: "#nosotros" },
         { label: "Flota", href: "#flota" },
         { label: "Norma vigente", href: "#norma" },
         { label: "Cotizar", href: "#cotizar" },
@@ -223,14 +223,14 @@ export function Footer() {
             <li><a href="mailto:ventas@ecobus.cl" className="inline-block py-1.5 hover:text-white transition-colors">ventas@ecobus.cl</a></li>
           </ul>
           <div className="flex gap-2 mt-3 -ml-2.5">
-            <a href="https://www.instagram.com/ecobus.cl/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de DECOBUS" className="w-11 h-11 flex items-center justify-center text-white/70 hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
-            <a href="https://www.facebook.com/buses.ecobus.2025" target="_blank" rel="noopener noreferrer" aria-label="Facebook de DECOBUS" className="w-11 h-11 flex items-center justify-center text-white/70 hover:text-white transition-colors"><Facebook className="w-5 h-5" /></a>
+            <a href="https://www.instagram.com/ecobus.cl/" target="_blank" rel="noopener noreferrer" aria-label="Instagram de ECOBUS" className="w-11 h-11 flex items-center justify-center text-white/70 hover:text-white transition-colors"><Instagram className="w-5 h-5" /></a>
+            <a href="https://www.facebook.com/buses.ecobus.2025" target="_blank" rel="noopener noreferrer" aria-label="Facebook de ECOBUS" className="w-11 h-11 flex items-center justify-center text-white/70 hover:text-white transition-colors"><Facebook className="w-5 h-5" /></a>
           </div>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 border-t border-white/10 mt-12 pt-6 text-sm text-white/50 flex flex-wrap justify-between gap-2">
-        <span>© 2026 DECOBUS. Todos los derechos reservados.</span>
+        <span>© 2026 ECOBUS. Todos los derechos reservados.</span>
         <span>Política de privacidad · Términos</span>
       </div>
     </footer>

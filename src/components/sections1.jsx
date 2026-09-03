@@ -7,7 +7,7 @@ const LOGO = "assets/ecobus-logo.png";
 /* Shared WhatsApp quote deep link — the primary conversion path. */
 export const WA_QUOTE =
   "https://wa.me/56999688045?text=" +
-  encodeURIComponent("Hola DECOBUS, quiero pedir una cotización.");
+  encodeURIComponent("Hola ECOBUS, quiero pedir una cotización.");
 
 /* ---------------------------------- NAVBAR --------------------------------- */
 export function Navbar() {
